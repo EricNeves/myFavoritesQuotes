@@ -20,7 +20,9 @@ class UserRepositoryTest extends TestCase
 
     public function setUp(): void 
     {
-        $this->pdo = new PDO('sqlite:/tmp/tests.db');
+        $sqlPathFile = __DIR__ . '/../../tmp/testsdb.db';
+
+        $this->pdo = new PDO('sqlite:'.$sqlPathFile);
         $this->pdo->exec('
             CREATE TABLE IF NOT EXISTS qt_users (
                 id         INTEGER PRIMARY KEY,
@@ -40,11 +42,11 @@ class UserRepositoryTest extends TestCase
      */
     public function shouldCreateUser()
     {
+        $this->expectException(PDOException::class);
+        
         $user = $this->createDefaultUser();
 
         $user['password'] = password_hash($user['password'], PASSWORD_DEFAULT);
-
-        $this->expectException(PDOException::class);
 
         $createUser = $this->userRepository->create($user);
 

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 use PHPUnit\Framework\TestCase;
 
@@ -12,16 +12,18 @@ class QuoteRepositoryTest extends TestCase
     public function createDefaultQuote(): array
     {
         return [
-            'quote'      => 'Man is least himself when he talks in his own person. Give him a mask, and he will tell the truth.',
-            'author'     => 'Oscar Wilde',
+            'quote' => 'Man is least himself when he talks in his own person. Give him a mask, and he will tell the truth.',
+            'author' => 'Oscar Wilde',
             'created_at' => '2024-01-01 00:00:00',
-            'user_id'    => '1'
+            'user_id' => '1'
         ];
     }
 
-    public function setUp(): void 
+    public function setUp(): void
     {
-        $this->pdo = new PDO('sqlite:/tmp/tests.db');
+        $sqlPathFile = __DIR__ . '/../../tmp/testsdb.db';
+
+        $this->pdo = new PDO('sqlite:' . $sqlPathFile);
         $this->pdo->exec('
             CREATE TABLE IF NOT EXISTS qt_quotes (
                 id         INTEGER PRIMARY KEY,
@@ -42,9 +44,9 @@ class QuoteRepositoryTest extends TestCase
      */
     public function shouldReturnTrueWhenSaveQuote()
     {
-        $quote = $this->createDefaultQuote();
-
         $this->expectException(PDOException::class);
+
+        $quote = $this->createDefaultQuote();
 
         $result = $this->quoteRepository->save($quote);
 
