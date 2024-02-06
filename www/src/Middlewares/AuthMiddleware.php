@@ -19,7 +19,9 @@ class AuthMiddleware
             exit;
         }
 
-        $parsedToken = JWT::validate($authorization['token']);
+        $jwt = new JWT();
+
+        $parsedToken = $jwt->validate($authorization['token']);
 
         if (!$parsedToken) {
             Response::json([

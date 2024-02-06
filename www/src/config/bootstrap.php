@@ -48,7 +48,9 @@ function dispatch(array $routes, array $factories, PDO $pdo): void
 
             foreach ($route['middlewares'] as $middleware) {
                if ($middleware === 'jwt') {
-                    $userAuth = AuthMiddleware::handle(Request::authorization());
+                    $authMiddeleware = new AuthMiddleware();
+
+                    $userAuth = $authMiddeleware->handle(Request::authorization());
                }
             }
 
