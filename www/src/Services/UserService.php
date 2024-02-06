@@ -83,7 +83,10 @@ class UserService
             if (!$user) return ['error' => 'Sorry, user not found.'];
 
             $user['created_at'] = date('d/m/Y H:i:s', strtotime($user['created_at']));
-            !is_null($user['updated_at']) && $user['updated_at'] = date('d/m/Y H:i:s', strtotime($user['updated_at']));
+
+            if (!is_null($user['updated_at'])) {
+                $user['updated_at'] = date('d/m/Y H:i:s', strtotime($user['updated_at']));
+            }
 
             return $user;
 
