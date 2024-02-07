@@ -79,7 +79,10 @@ class QuoteService
 
             foreach ($quotes as $key => $quote) {
                 $quotes[$key]['created_at'] = date('d/m/Y H:i:s', strtotime($quote['created_at']));
-                !is_null($quotes[$key]['updated_at']) && $quotes[$key]['updated_at'] = date('d/m/Y H:i:s', strtotime($quote['updated_at']));
+
+                if (!is_null($quotes[$key]['updated_at'])) {
+                    $quotes[$key]['updated_at'] = date('d/m/Y H:i:s', strtotime($quote['updated_at']));
+                }
             }
 
             return [
@@ -103,7 +106,10 @@ class QuoteService
             if (!$quote) return ['error' => "Sorry, we couldn't find this quote."];
 
             $quote['created_at'] = date('d/m/Y H:i:s', strtotime($quote['created_at']));
-            !is_null($quote['updated_at']) && $quote['updated_at'] = date('d/m/Y H:i:s', strtotime($quote['updated_at']));
+
+            if (!is_null($quote['updated_at'])) {
+                $quote['updated_at'] = date('d/m/Y H:i:s', strtotime($quote['updated_at']));
+            }
 
             return [
                 'success' => $quote
