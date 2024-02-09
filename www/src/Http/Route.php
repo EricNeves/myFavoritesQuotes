@@ -4,7 +4,7 @@ namespace App\Http;
 
 class Route 
 {
-    private static array $routes      = [];
+    private static array $routes = [];
     
     public function __construct(
         private string $method, 
