@@ -5,7 +5,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { CalendarModule } from 'primeng/calendar';
+/**
+ * Module for the root of the application
+ */
+import { ViewsModule  } from './modules/views/views.module';
+import { SharedModule } from './modules/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +19,8 @@ import { CalendarModule } from 'primeng/calendar';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    CalendarModule
+    ViewsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
