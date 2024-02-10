@@ -1,0 +1,14 @@
+<app-navbar [items]="items"></app-navbar>
+
+<div class="login">
+  <div class="login-form-header">
+    <h1>Auth</h1>
+
+    <input pInputText placeholder="Email" />
+    <p-password [toggleMask]="true" placeholder="Password" [style]="{'width':'100%'}" [inputStyle]="{'width':'100%'}"></p-password>
+  </div>
+
+  <div class="login-form-footer">
+    <p-button label="Login" icon="pi pi-sign-in" severity="secondary"></p-button>
+  </div>
+</div>

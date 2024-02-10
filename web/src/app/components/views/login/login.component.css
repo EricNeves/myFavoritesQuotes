@@ -1,0 +1,23 @@
+.login {
+  margin: 4rem auto;
+  max-width: 500px;
+}
+
+.login input {
+  width: 100%;
+  margin-bottom: .5rem;
+}
+
+.login h1 {
+  margin-bottom: 2rem;
+  font-weight: 500;
+  color: #6B7280;
+}
+
+.password {
+  width: 1rem;
+}
+
+.login-form-footer {
+  margin: 2rem 0;
+}
