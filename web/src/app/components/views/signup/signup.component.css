@@ -1,0 +1,23 @@
+.signup {
+  margin: 4rem auto;
+  max-width: 500px;
+}
+
+.signup input {
+  width: 100%;
+  margin-bottom: .5rem;
+}
+
+.signup h1 {
+  margin-bottom: 2rem;
+  font-weight: 500;
+  color: #6B7280;
+}
+
+.password {
+  width: 1rem;
+}
+
+.signup-form-footer {
+  margin: 2rem 0;
+}

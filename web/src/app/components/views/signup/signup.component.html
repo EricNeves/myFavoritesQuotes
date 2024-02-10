@@ -1,0 +1,16 @@
+<app-navbar [items]="items"></app-navbar>
+
+<div class="signup">
+  <div class="signup-form-header">
+    <h1>Sign Up</h1>
+
+    <input pInputText placeholder="Username" />
+    <input pInputText placeholder="Email" />
+    <p-password [toggleMask]="true" placeholder="Password" [style]="{'width':'100%'}" [inputStyle]="{'width':'100%'}"></p-password>
+  </div>
+
+  <div class="signup-form-footer">
+    <p-button label="Save" icon="pi pi-plus" class="p-button-raised" [style]="{ 'margin-right': '1rem' }"></p-button>
+    <p-button label="Cancel" routerLink="/" icon="pi pi-sign-out" class="p-button-raised" severity="danger"></p-button>
+  </div>
+</div>
