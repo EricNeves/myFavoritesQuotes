@@ -1,0 +1,31 @@
+.card {
+  margin: 4rem auto;
+  max-width: 500px;
+}
+
+.card-header, .card-user {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.card-header {
+  justify-content: space-between;
+  width: 100%;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
