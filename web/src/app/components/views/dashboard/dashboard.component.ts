@@ -50,67 +50,72 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userService.getUser().subscribe((user: User<any>) => {
-      this.user = user;
+    this.userService.getUser().subscribe((user: any) => {
+      this.user = user.data;
+
+      this.items = [
+        {
+          label: 'Home',
+          icon: 'pi pi-fw pi-home',
+          routerLink: '/'
+        },
+        {
+          label: 'Create Quote',
+          icon: 'pi pi-fw pi-plus',
+          routerLink: '/dashboard/quote/create'
+        },
+        {
+          label: 'Profile',
+          icon: 'pi pi-fw pi-user',
+          items: [
+            {
+              label: 'Dashboard',
+              icon: 'pi pi-fw pi-chart-bar',
+              routerLink: '/dashboard'
+            },
+            {
+              label: 'Update Profile',
+              icon: 'pi pi-fw pi-pencil',
+              routerLink: `/dashboard/user/${this.user.id}/update`
+            },
+            {
+              label: 'Logout',
+              icon: 'pi pi-fw pi-sign-out',
+              command: () => {
+                this.jwtService.removeToken()
+                window.location.href = '/'
+              }
+            }
+          ]
+        },
+        {
+          label: 'Contact',
+          icon: 'pi pi-fw pi-envelope',
+          items: [
+            {
+              label: 'Instagram',
+              icon: 'pi pi-fw pi-instagram',
+              url: 'https://www.instagram.com/ericneves_dev',
+              target: '_blank'
+            },
+            {
+              label: 'GitHub',
+              icon: 'pi pi-fw pi-github',
+              url: 'https://github.com/ericneves',
+              target: '_blank',
+            },
+            {
+              label: 'LinkedIn',
+              icon: 'pi pi-fw pi-linkedin',
+              url: 'https://www.linkedin.com/in/ericnevesrr',
+              target: '_blank'
+            }
+          ]
+        },
+      ]
     });
 
     this.loadQuotes();
-
-    this.items = [
-      {
-        label: 'Home',
-        icon: 'pi pi-fw pi-home',
-        routerLink: '/'
-      },
-      {
-        label: 'Create Quote',
-        icon: 'pi pi-fw pi-plus',
-        routerLink: '/dashboard/quote/create'
-      },
-      {
-        label: 'Profile',
-        icon: 'pi pi-fw pi-user',
-        items: [
-          {
-            label: 'Dashboard',
-            icon: 'pi pi-fw pi-chart-bar',
-            routerLink: '/dashboard'
-          },
-          {
-            label: 'Logout',
-            icon: 'pi pi-fw pi-sign-out',
-            command: () => {
-              this.jwtService.removeToken()
-              window.location.href = '/'
-            }
-          }
-        ]
-      },
-      {
-        label: 'Contact',
-        icon: 'pi pi-fw pi-envelope',
-        items: [
-          {
-            label: 'Instagram',
-            icon: 'pi pi-fw pi-instagram',
-            url: 'https://www.instagram.com/ericneves_dev',
-            target: '_blank'
-          },
-          {
-            label: 'GitHub',
-            icon: 'pi pi-fw pi-github',
-            url: 'https://github.com/ericneves',
-            target: '_blank',
-          },
-          {
-            label: 'LinkedIn',
-            icon: 'pi pi-fw pi-linkedin',
-            url: 'https://www.linkedin.com/in/ericnevesrr',
-            target: '_blank'
-          }
-        ]
-      },
-    ]
   }
 
   public onDelete(event: any, id: any) {

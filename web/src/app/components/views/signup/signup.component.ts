@@ -38,6 +38,11 @@ export class SignupComponent implements OnInit {
               routerLink: '/dashboard'
             },
             {
+              label: 'Update Profile',
+              icon: 'pi pi-fw pi-pencil',
+              routerLink: `/dashboard/user/${data.id}/update`
+            },
+            {
               label: 'Logout',
               icon: 'pi pi-fw pi-sign-out',
               command: () => {
