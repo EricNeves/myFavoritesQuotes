@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 /**
  * Modules
@@ -12,6 +14,7 @@ import { MenuModule     } from 'primeng/menu'
 import { SkeletonModule } from 'primeng/skeleton'
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
+import { ToastModule } from 'primeng/toast'
 
 /**
  * Components
@@ -43,7 +46,10 @@ import { LoginComponent       } from '../../components/views/login/login.compone
     MenuModule,
     SkeletonModule,
     InputTextModule,
-    PasswordModule
+    PasswordModule,
+    FormsModule,
+    HttpClientModule,
+    ToastModule
   ]
 })
 export class ViewsModule { }
