@@ -5,6 +5,7 @@ import { MessageService } from 'primeng/api';
 import { UserService } from '../../../services/user.service';
 
 import { User } from '../../../models/user.model';
+import { JwtService } from '../../../services/jwt.service';
 
 @Component({
   selector: 'app-signup',
@@ -22,9 +23,33 @@ export class SignupComponent implements OnInit {
     password: ''
   }
 
-  constructor(private userService: UserService, private messageService: MessageService) { }
+  constructor(private userService: UserService, private messageService: MessageService, private jwtService: JwtService) { }
 
   ngOnInit() {
+    this.userService.getUser().subscribe({
+      next: ({ data }: any ) => {
+        this.items = [...this.items, {
+          label: 'Profile',
+          icon: 'pi pi-fw pi-user',
+          items: [
+            {
+              label: 'Dashboard',
+              icon: 'pi pi-fw pi-chart-bar',
+              routerLink: '/dashboard'
+            },
+            {
+              label: 'Logout',
+              icon: 'pi pi-fw pi-sign-out',
+              command: () => {
+                this.jwtService.removeToken()
+                window.location.href = '/'
+              }
+            }
+          ]
+        }]
+      }
+    })
+
     this.items = [
       {
         label: 'Home',
@@ -32,7 +57,7 @@ export class SignupComponent implements OnInit {
         routerLink: '/'
       },
       {
-        label: 'Create Quote',
+        label: 'Join',
         icon: 'pi pi-fw pi-plus',
         items: [
           {

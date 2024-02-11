@@ -4,8 +4,8 @@ import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 
 import { UserService } from '../../../services/user.service';
-import { JwtService } from '../../../services/jwt.service';
 import { User } from '../../../models/user.model';
+import { JwtService } from '../../../services/jwt.service';
 
 @Component({
   selector: 'app-login',
@@ -28,6 +28,12 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.userService.getUser().subscribe({
+      next: ({ data }: any ) => {
+        this.router.navigate(['/dashboard']);
+      }
+    })
+
     this.items = [
       {
         label: 'Home',
@@ -35,7 +41,7 @@ export class LoginComponent implements OnInit {
         routerLink: '/'
       },
       {
-        label: 'Create Quote',
+        label: 'Join',
         icon: 'pi pi-fw pi-plus',
         items: [
           {

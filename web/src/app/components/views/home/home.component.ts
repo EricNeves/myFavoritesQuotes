@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { UserService } from '../../../services/user.service';
+import { JwtService } from '../../../services/jwt.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +11,33 @@ import { MenuItem } from 'primeng/api';
 export class HomeComponent implements OnInit {
   public items: MenuItem[] = []
 
+  constructor(private userService: UserService, private jwtService: JwtService) { }
+
   ngOnInit() {
+    this.userService.getUser().subscribe({
+      next: ({ data }: any ) => {
+        this.items = [...this.items, {
+          label: 'Profile',
+          icon: 'pi pi-fw pi-user',
+          items: [
+            {
+              label: 'Dashboard',
+              icon: 'pi pi-fw pi-chart-bar',
+              routerLink: '/dashboard'
+            },
+            {
+              label: 'Logout',
+              icon: 'pi pi-fw pi-sign-out',
+              command: () => {
+                this.jwtService.removeToken()
+                window.location.href = '/'
+              }
+            }
+          ]
+        }]
+      }
+    })
+
     this.items = [
       {
         label: 'Home',
@@ -17,7 +45,7 @@ export class HomeComponent implements OnInit {
         routerLink: '/'
       },
       {
-        label: 'Create Quote',
+        label: 'Join',
         icon: 'pi pi-fw pi-plus',
         items: [
           {
@@ -58,4 +86,5 @@ export class HomeComponent implements OnInit {
       }
     ]
   }
+
 }
