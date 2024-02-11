@@ -35,7 +35,7 @@ class QuoteRepository
     {
         $stmt = $this->pdo->query('
             SELECT 
-                quote, author, qt_quotes.created_at, username
+                quote, author, qt_quotes.created_at, qt_quotes.updated_at, username
             FROM
                 qt_quotes
             INNER
