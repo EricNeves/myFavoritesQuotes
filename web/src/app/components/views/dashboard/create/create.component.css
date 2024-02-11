@@ -1,0 +1,19 @@
+.dash-create {
+  margin: 4rem auto;
+  max-width: 500px;
+}
+
+.dash-create input, .dash-create textarea {
+  width: 100%;
+  margin-bottom: .5rem;
+}
+
+.dash-create h1 {
+  margin-bottom: 2rem;
+  font-weight: 500;
+  color: #6B7280;
+}
+
+.dash-form-footer {
+  margin: 2rem 0;
+}

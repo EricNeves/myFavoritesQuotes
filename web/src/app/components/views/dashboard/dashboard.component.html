@@ -1,5 +1,36 @@
-<pre>
-  <code>
-    {{ user | json}}
-  </code>
-</pre>
+<app-navbar [items]="items"></app-navbar>
+
+<div class="dashboard">
+  <div class="dash-header">
+    <h1>Dashboard</h1>
+  </div>
+
+  <div class="dash-main">
+    <div class="quotes" *ngFor="let quote of quotes.quotes">
+      <p-fieldset [style]="{ 'margin-bottom': '.8rem' }" legend="Quote - Created: {{ quote.created_at }}">
+        <blockquote>
+          <span>"{{ quote.quote }}"</span>
+          <footer>- <cite>{{ quote.author }}</cite></footer>
+
+          <div class="dates">
+            <span *ngIf="quote.updated_at">Updated: {{ quote.updated_at }}</span>
+          </div>
+
+          <div class="quote-actions">
+            <p-button icon="pi pi-pencil" size="small" routerLink="/dashboard/quote/{{ quote.id }}/update" severity="secondary" [style]="{ 'margin-right': '.7rem' }"></p-button>
+            <p-button icon="pi pi-trash" size="small" (onClick)="onDelete($event, quote.id)" severity="danger"></p-button>
+          </div>
+        </blockquote>
+      </p-fieldset>
+    </div>
+  </div>
+
+  <div class="pagination">
+    <p-button *ngIf="page > 1" (click)="previousPage()" icon="pi pi-angle-left" [style]="{ 'margin-right': '.7rem' }"></p-button>
+    <p-button *ngIf="hasNextPage" (click)="nextPage()" icon="pi pi-angle-right"></p-button>
+  </div>
+</div>
+
+
+<p-toast position="bottom-right"></p-toast>
+<p-confirmDialog></p-confirmDialog>

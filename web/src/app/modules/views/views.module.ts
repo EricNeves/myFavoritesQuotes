@@ -15,6 +15,10 @@ import { SkeletonModule } from 'primeng/skeleton'
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { ToastModule } from 'primeng/toast'
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { FieldsetModule } from 'primeng/fieldset';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+
 
 /**
  * Components
@@ -24,6 +28,8 @@ import { RandomQuoteComponent } from '../../components/views/random-quote/random
 import { SignupComponent      } from '../../components/views/signup/signup.component';
 import { LoginComponent       } from '../../components/views/login/login.component';
 import { DashboardComponent   } from '../../components/views/dashboard/dashboard.component';
+import { CreateComponent      } from '../../components/views/dashboard/create/create.component';
+import { UpdateComponent      } from '../../components/views/dashboard/update/update.component';
 
 @NgModule({
   declarations: [
@@ -31,14 +37,18 @@ import { DashboardComponent   } from '../../components/views/dashboard/dashboard
     RandomQuoteComponent,
     SignupComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    CreateComponent,
+    UpdateComponent
   ],
   exports: [
     HomeComponent,
     RandomQuoteComponent,
     SignupComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    CreateComponent,
+    UpdateComponent
   ],
   imports: [
     CommonModule,
@@ -52,7 +62,10 @@ import { DashboardComponent   } from '../../components/views/dashboard/dashboard
     PasswordModule,
     FormsModule,
     HttpClientModule,
-    ToastModule
+    ToastModule,
+    InputTextareaModule,
+    FieldsetModule,
+    ConfirmDialogModule
   ]
 })
 export class ViewsModule { }

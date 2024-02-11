@@ -1,0 +1,17 @@
+<app-navbar [items]="items"></app-navbar>
+
+<div class="dash-create">
+  <div class="dash-form-header">
+    <h1>Create a new quote</h1>
+
+    <input pInputText placeholder="Author" [(ngModel)]="quote.author" />
+    <textarea pInputTextarea rows="5" placeholder="Quote" [(ngModel)]="quote.quote" [autoResize]="true"></textarea>
+  </div>
+
+  <div class="dash-form-footer">
+    <p-button label="Create" (onClick)="save()" [disabled]="disabled" icon="pi pi-plus" class="p-button-raised" [style]="{ 'margin-right': '1rem' }"></p-button>
+    <p-button label="Cancel" routerLink="/dashboard" icon="pi pi-sign-out" class="p-button-raised" severity="danger" [outlined]="true"></p-button>
+  </div>
+</div>
+
+<p-toast position="bottom-right"></p-toast>
