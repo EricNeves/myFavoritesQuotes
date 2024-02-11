@@ -10,7 +10,7 @@
   </div>
 
   <div class="signup-form-footer">
-    <p-button label="Save" (onClick)="save()" icon="pi pi-plus" class="p-button-raised" [style]="{ 'margin-right': '1rem' }"></p-button>
+    <p-button label="Save" [disabled]="disabled" (onClick)="save()" icon="pi pi-plus" class="p-button-raised" [style]="{ 'margin-right': '1rem' }"></p-button>
     <p-button label="Cancel" routerLink="/" icon="pi pi-sign-out" class="p-button-raised" severity="danger" [outlined]="true"></p-button>
   </div>
 </div>
