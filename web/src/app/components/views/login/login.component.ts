@@ -1,15 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
+
+import { UserService } from '../../../services/user.service';
+import { JwtService } from '../../../services/jwt.service';
+import { User } from '../../../models/user.model';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrl: './login.component.css',
+  providers: [MessageService]
 })
 export class LoginComponent implements OnInit {
   public items: MenuItem[] = []
+  public disabled: boolean = false;
 
-  constructor() { }
+  public user: User<string> = {
+    email: '',
+    password: ''
+  }
+
+  constructor(
+    private userService: UserService, private router: Router, private messageService: MessageService,
+    private jwtService: JwtService
+  ) { }
 
   ngOnInit() {
     this.items = [
@@ -59,5 +75,34 @@ export class LoginComponent implements OnInit {
         ]
       }
     ]
+  }
+
+  public auth() {
+    this.disabled = true;
+
+    for (const key in this.user) {
+      if (this.user[key] === '') {
+        this.messageService.add({severity: 'warn', summary: 'Warning', detail: `The field ${key} is required`});
+
+        this.disabled = false;
+
+        return;
+      }
+    }
+
+    this.userService.login(this.user).subscribe({
+      next: (response: any) => {
+        this.jwtService.setToken(response.jwt);
+
+        this.router.navigate(['/dashboard']);
+      },
+      error: (error: any) => {
+        this.messageService.add({severity: 'error', summary: 'Error', detail: error.error.message});
+
+        this.disabled = false;
+
+        return;
+      }
+    })
   }
 }

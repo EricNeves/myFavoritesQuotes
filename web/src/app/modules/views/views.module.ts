@@ -23,19 +23,22 @@ import { HomeComponent        } from '../../components/views/home/home.component
 import { RandomQuoteComponent } from '../../components/views/random-quote/random-quote.component';
 import { SignupComponent      } from '../../components/views/signup/signup.component';
 import { LoginComponent       } from '../../components/views/login/login.component';
+import { DashboardComponent   } from '../../components/views/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     RandomQuoteComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent
   ],
   exports: [
     HomeComponent,
     RandomQuoteComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     CommonModule,

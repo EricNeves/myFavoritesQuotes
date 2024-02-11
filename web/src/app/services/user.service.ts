@@ -15,4 +15,12 @@ export class UserService {
   public register(user: User<string>):Observable<User<string>> {
     return this.http.post<User<string>>(`${environment.api}/users/create`, user);
   }
+
+  public login(user: User<string>):Observable<User<string>> {
+    return this.http.post<User<string>>(`${environment.api}/users/auth`, user);
+  }
+
+  public getUser():Observable<User<string>> {
+    return this.http.get<User<string>>(`${environment.api}/users/fetch`);
+  }
 }
