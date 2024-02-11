@@ -13,6 +13,10 @@ export class QuoteService {
 
   constructor(private http: HttpClient) { }
 
+  public fetchRandomQuote(): Observable<Quote<any>> {
+    return this.http.get<Quote<any>>(`${environment.api}/quotes/fetch`)
+  }
+
   public getQuotes(page: number|string): Observable<Quote<any>> {
     return this.http.get<Quote<any>>(`${environment.api}/quotes/all?page=${page}`)
   }

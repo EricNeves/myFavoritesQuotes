@@ -2,6 +2,9 @@ export interface Quote<T> {
   author?: string;
   quote?: string;
   id?: number|string;
+  created_at?: Date;
+  updated_at?: Date;
+  username?: string;
   quotes?: [
     {
       id?: number;

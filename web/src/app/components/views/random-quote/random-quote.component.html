@@ -1,32 +1,24 @@
 <div class="card">
   <p-panel [toggleable]="false">
     <ng-template pTemplate="header">
-      <div class="skeleton" *ngIf="false">
-        <p-skeleton width="15rem" styleClass="mb-2"></p-skeleton>
-      </div>
-      <div class="card-header" *ngIf="true">
+      <div class="card-header">
         <div class="card-user">
-          <p-avatar label="A" styleClass="mr-2" size="large"></p-avatar>
-          <span class="font-bold">Amy Elsner</span>
+          <p-avatar label="{{ firstLetter }}" styleClass="mr-2" size="large"></p-avatar>
+          <span class="font-bold">{{ quote.username }}</span>
         </div>
         <div>
-          <span class="p-text-secondary">Updated 2 hours ago</span>
+          <span class="p-text-secondary">{{ quote.created_at }}</span>
         </div>
       </div>
     </ng-template>
-    <div class="skeleton" *ngIf="false">
-      <p-skeleton styleClass="mb-2"></p-skeleton>
-      <p-skeleton width="10rem" styleClass="mb-2"></p-skeleton>
-      <p-skeleton width="5rem" styleClass="mb-2"></p-skeleton>
-      <p-skeleton height="2rem" styleClass="mb-2"></p-skeleton>
+    <div class="card-body">
+      <p *ngIf="quote.quote">{{ quote.quote }}</p>
+      <cite *ngIf="quote.author">{{ quote.author }}</cite>
+      <span *ngIf="message">{{ message }}</span>
     </div>
-    <p class="card-body" *ngIf="true">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate ut, consequatur inventore illo impedit
-      tempora?
-    </p>
     <ng-template pTemplate="footer">
-      <div class="card-footer">
-        <p-button icon="pi pi-refresh" [rounded]="true"></p-button>
+      <div class="card-footer" *ngIf="quote.quote">
+        <p-button [disabled]="loading" (onClick)="load()" icon="pi pi-refresh" [rounded]="true"></p-button>
       </div>
     </ng-template>
   </p-panel>
