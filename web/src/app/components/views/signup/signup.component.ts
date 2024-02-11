@@ -14,6 +14,7 @@ import { User } from '../../../models/user.model';
 })
 export class SignupComponent implements OnInit {
   public items: MenuItem[] = []
+  public disabled: boolean = false;
 
   public user: User<string> = {
     username: '',
@@ -74,20 +75,31 @@ export class SignupComponent implements OnInit {
   }
 
   public save(): void {
+    this.disabled = true;
+
     for (const key in this.user) {
       if (this.user[key] === '') {
-        this.messageService.add({severity: 'warn', summary: 'Warning', detail: `The field ${key} is required`});
+        this.messageService.add({ severity: 'warn', summary: 'Warning', detail: `The field ${key} is required` });
+
+        this.disabled = false;
+
         return;
       }
     }
 
     this.userService.register(this.user).subscribe({
       next: (response: any) => {
-        this.messageService.add({severity: 'success', summary: 'Success', detail: response.message});
+        this.messageService.add({ severity: 'success', summary: 'Success', detail: response.message });
       },
       error: (error) => {
-        this.messageService.add({severity: 'error', summary: 'Error', detail: error.error.message});
+        this.messageService.add({ severity: 'error', summary: 'Error', detail: error.error.message });
+
+        this.disabled = false;
+
+        return;
       }
     })
+
+    this.disabled = false;
   }
 }
