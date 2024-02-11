@@ -65,7 +65,7 @@ class QuoteController
 
         $page = $page < 1 ? 1 : $page;
 
-        $limitPerPage = 6;
+        $limitPerPage = 3;
 
         $fetchQuote = $this->quoteService->fetchUserQuotes($page, $limitPerPage);
 
