@@ -102,7 +102,7 @@ class QuoteController
         $response::json([
             'error'   => false,
             'success' => true,
-            'data'    => $quote
+            'data'    => $quote['success']
         ], 200);
         return;
     }
