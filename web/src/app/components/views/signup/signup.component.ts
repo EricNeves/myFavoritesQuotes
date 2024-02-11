@@ -1,15 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { MessageService } from 'primeng/api';
+
+import { UserService } from '../../../services/user.service';
+
+import { User } from '../../../models/user.model';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrl: './signup.component.css'
+  styleUrl: './signup.component.css',
+  providers: [MessageService]
 })
 export class SignupComponent implements OnInit {
   public items: MenuItem[] = []
 
-  constructor() { }
+  public user: User<string> = {
+    username: '',
+    email: '',
+    password: ''
+  }
+
+  constructor(private userService: UserService, private messageService: MessageService) { }
 
   ngOnInit() {
     this.items = [
@@ -59,5 +71,23 @@ export class SignupComponent implements OnInit {
         ]
       }
     ]
+  }
+
+  public save(): void {
+    for (const key in this.user) {
+      if (this.user[key] === '') {
+        this.messageService.add({severity: 'warn', summary: 'Warning', detail: `The field ${key} is required`});
+        return;
+      }
+    }
+
+    this.userService.register(this.user).subscribe({
+      next: (response: any) => {
+        this.messageService.add({severity: 'success', summary: 'Success', detail: response.message});
+      },
+      error: (error) => {
+        this.messageService.add({severity: 'error', summary: 'Error', detail: error.error.message});
+      }
+    })
   }
 }

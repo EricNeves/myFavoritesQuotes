@@ -12,7 +12,7 @@ import { environment } from '../../environments/environment.development'
 export class UserService {
   constructor(private http: HttpClient) { }
 
-  public register(user: User):Observable<User> {
-    return this.http.post<User>(`${environment.api}/users/create`, user);
+  public register(user: User<string>):Observable<User<string>> {
+    return this.http.post<User<string>>(`${environment.api}/users/create`, user);
   }
 }
