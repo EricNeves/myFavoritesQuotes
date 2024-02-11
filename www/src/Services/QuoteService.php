@@ -66,7 +66,7 @@ class QuoteService
         catch (\Exception $error)    { return ['error' => $error->getMessage()]; }
     }
 
-    public function fetchUserQuotes(int $page, int $limitPerPage = 6)
+    public function fetchUserQuotes(int $page, int $limitPerPage)
     {
         try {
             $userAuth = $this->jwt->user();

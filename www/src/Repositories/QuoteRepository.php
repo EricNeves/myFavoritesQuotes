@@ -52,7 +52,7 @@ class QuoteRepository
 
     public function fetchAll(int $userId, int|string $page, int|string $limit)
     {
-        $offset = ($page - 1) * 4;
+        $offset = ($page - 1) * 3;
 
         $stmt = $this->pdo->prepare('
             SELECT 
