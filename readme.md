@@ -86,7 +86,7 @@ Agora, na raiz do projeto **./myFavoritesQuotes** execute o comando abaixo:
 ```sh
 
 # Execute Docker Command
-$ docker-compose -f -d --build
+$ docker-compose up -d --build
 
 ```
 
