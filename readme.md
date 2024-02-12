@@ -37,7 +37,7 @@ Principais funcionalidades:
 
 Novos recursos foram adicionados no projeto, **principalmente no backend**, uma vez que fora introduzido o padrão de arquitetura em camadas, conhecido como **Layered Architecture**. Essa mudança proporciona uma estrutura mais organizada e modular para o backend da aplicação, permitindo a fácil implementação de testes unitários usando o **PHP Unit**.
 
-A adoção do **Layered Architecture** promove uma melhor organização e separação de responsabilidades no código-fonte. Cada camada da arquitetura possui um conjunto específico de responsabilidades (**Controllers**, **Factories**, **Repositories**, **Services**, **Http**, **Middlewares**, **Utils** e entre outros).
+A adoção do **Layered Architecture** promove uma melhor organização e separação de responsabilidades no código-fonte. Cada camada da arquitetura possui um conjunto específico de responsabilidades (**Dependency Injection**, **Controllers**, **Factories**, **Repositories**, **Services**, **Http**, **Middlewares**, **Utils** e entre outros).
 
 * API
   * PHP-v8.2
