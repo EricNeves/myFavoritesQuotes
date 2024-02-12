@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  api: 'http://localhost/github/myFavoritesQuotes/www'
+  api: 'http://localhost:3333'
 };

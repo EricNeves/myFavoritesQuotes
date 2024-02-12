@@ -1,0 +1,53 @@
+version: '3'
+services:
+  api:
+    build:
+      context: ./www
+      dockerfile: Dockerfile
+    restart: always
+    container_name: quote_api
+    ports:
+      - '3333:80'
+    volumes:
+      - ./www:/var/www/html
+    networks:
+      - api
+      - database
+    depends_on:
+      - database
+  database:
+    image: postgres:15.4
+    container_name: quote_db
+    restart: always
+    ports:
+      - '5430:5432'
+    environment:
+      POSTGRES_USER: quote_user
+      POSTGRES_PASSWORD: quote_pass
+      POSTGRES_DB: favorites_quotes
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./init:/init
+      - ./init/tables.sql:/docker-entrypoint-initdb.d/tables.sql
+    networks:
+      - database
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    restart: always
+    container_name: quote_web
+    ports:
+      - '3131:80'
+    volumes:
+      - ./web:/app
+    networks:
+      - web
+    depends_on:
+      - api
+networks:
+  api:
+  database:
+  web:
+volumes:
+  db_data:
