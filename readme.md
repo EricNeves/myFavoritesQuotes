@@ -7,7 +7,7 @@
 </h1>
 
 <h4 align="center">
-  Aplicação Full Stack desenvolvida com PHP, PostgreSQL, Angular, PrimeNG e Docker.
+  Aplicação Full Stack desenvolvida com PHP, PostgreSQL, Angular, PrimeNG, Docker e entre outros.
 </h4> 
 
 <p align="center">Data de criação: Feb 10, 2024</p>
@@ -17,6 +17,9 @@
   <img src="https://img.shields.io/github/languages/top/ericneves/todoList?style=flat-square&logo=PHP&logoColor=%238892BF&label=PHP&labelColor=%23dddddd">
   <img src="https://img.shields.io/github/license/ericneves/todoList?style=flat-square&color=%237f5af0">
 </p>
+
+![screenshot](.github/screenA.png)
+![screenshot](.github/screenB.png)
 
 ### Description
 
