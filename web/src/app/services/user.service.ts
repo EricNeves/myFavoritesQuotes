@@ -23,4 +23,8 @@ export class UserService {
   public getUser():Observable<User<string>> {
     return this.http.get<User<string>>(`${environment.api}/users/fetch`);
   }
+
+  public updateUser(user: User<string>):Observable<User<string>> {
+    return this.http.put<User<string>>(`${environment.api}/users/update`, user);
+  }
 }

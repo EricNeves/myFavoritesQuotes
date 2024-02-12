@@ -23,13 +23,14 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 /**
  * Components
  */
-import { HomeComponent        } from '../../components/views/home/home.component';
-import { RandomQuoteComponent } from '../../components/views/random-quote/random-quote.component';
-import { SignupComponent      } from '../../components/views/signup/signup.component';
-import { LoginComponent       } from '../../components/views/login/login.component';
-import { DashboardComponent   } from '../../components/views/dashboard/dashboard.component';
-import { CreateComponent      } from '../../components/views/dashboard/create/create.component';
-import { UpdateComponent      } from '../../components/views/dashboard/update/update.component';
+import { HomeComponent                 } from '../../components/views/home/home.component';
+import { RandomQuoteComponent          } from '../../components/views/random-quote/random-quote.component';
+import { SignupComponent               } from '../../components/views/signup/signup.component';
+import { LoginComponent                } from '../../components/views/login/login.component';
+import { DashboardComponent            } from '../../components/views/dashboard/dashboard.component';
+import { CreateComponent               } from '../../components/views/dashboard/create/create.component';
+import { UpdateComponent               } from '../../components/views/dashboard/update/update.component';
+import { UpdateComponent as UpdateUser } from '../../components/views/dashboard/user/update/update.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { UpdateComponent      } from '../../components/views/dashboard/update/up
     LoginComponent,
     DashboardComponent,
     CreateComponent,
-    UpdateComponent
+    UpdateComponent,
+    UpdateUser
   ],
   exports: [
     HomeComponent,
@@ -48,7 +50,8 @@ import { UpdateComponent      } from '../../components/views/dashboard/update/up
     LoginComponent,
     DashboardComponent,
     CreateComponent,
-    UpdateComponent
+    UpdateComponent,
+    UpdateUser
   ],
   imports: [
     CommonModule,

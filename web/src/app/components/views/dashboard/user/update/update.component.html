@@ -1,1 +1,17 @@
-<p>update works!</p>
+<app-navbar [items]="items"></app-navbar>
+
+<div class="profile">
+  <div class="profile-form-header">
+    <h1>Update Profile</h1>
+
+    <input pInputText placeholder="Username" [(ngModel)]="user.username" />
+    <p-password [toggleMask]="true" placeholder="Password" [style]="{'width':'100%'}" [inputStyle]="{'width':'100%'}" [(ngModel)]="user.password"></p-password>
+  </div>
+
+  <div class="profile-form-footer">
+    <p-button label="Update" [disabled]="disabled" (onClick)="update()" icon="pi pi-plus" severity="secondary" class="p-button-raised" [style]="{ 'margin-right': '1rem' }"></p-button>
+    <p-button label="Cancel" routerLink="/dashboard" icon="pi pi-sign-out" class="p-button-raised" severity="danger" [outlined]="true"></p-button>
+  </div>
+</div>
+
+<p-toast position="bottom-right"></p-toast>
