@@ -95,3 +95,9 @@ O app está rodando nos seguintes processos:
 * API: http://localhost:3333 
 * WEB: http://localhost:3131 
 
+### License 
+
+<img src="https://img.shields.io/github/license/ericneves/todoList?style=flat-square&color=%237f5af0">
+
+### Author 🧑‍💻
+<a href="https://www.instagram.com/ericneves_dev/"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"></a> <a href="https://linkedin.com/in/ericnevesrr"> <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
