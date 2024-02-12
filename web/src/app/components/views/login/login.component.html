@@ -5,7 +5,7 @@
     <h1>Auth</h1>
 
     <input pInputText placeholder="Email" [(ngModel)]="user.email" />
-    <p-password [toggleMask]="true" placeholder="Password" [style]="{'width':'100%'}" [inputStyle]="{'width':'100%'}" [(ngModel)]="user.password"></p-password>
+    <p-password [toggleMask]="true" [feedback]="false" placeholder="Password" [style]="{'width':'100%'}" [inputStyle]="{'width':'100%'}" [(ngModel)]="user.password"></p-password>
   </div>
 
   <div class="login-form-footer">
