@@ -131,7 +131,7 @@ class QuoteServiceTest extends TestCase
             ->willReturn(1);
 
         $quoteService    = new QuoteService($validator, $jwt, $quoteRepository);
-        $result          = $quoteService->fetchUserQuotes(1);
+        $result          = $quoteService->fetchUserQuotes(1, 3);
 
         $this->assertArrayHasKey('quotes', $result);
     }
