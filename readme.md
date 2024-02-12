@@ -23,3 +23,19 @@
 
 ### Description
 
+**"My Favorites Quotes"** é uma aplicação web projetada para permitir que os usuários armazenem e compartilhem suas citações favoritas de maneira conveniente.
+
+No geral, a aplicação permite que os usuários **armazenem**, **explorem** e **compartilhem** suas citações favoritas.
+
+Principais funcionalidades:
+  * Cadastro
+  * Autenticação
+  * Gerenciamento de Citações
+  * Geração de Citação Aleatória
+
+### Features
+
+Novos recursos foram adicionados no projeto, **principalmente no backend**, uma vez que fora introduzido o padrão de arquitetura em camadas, conhecido como **Layered Architecture**. Essa mudança proporciona uma estrutura mais organizada e modular para o backend da aplicação, permitindo a fácil implementação de testes unitários usando o **PHP Unit**.
+
+A adoção da **Layered Architecture** promove uma melhor organização e separação de responsabilidades no código-fonte. Cada camada da arquitetura possui um conjunto específico de responsabilidades.
+
