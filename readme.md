@@ -54,7 +54,7 @@ A adoção do **Layered Architecture** promove uma melhor organização e separa
     * Node-v21
     * NGINX
     * typescript-v5.3.2
-    * rxJS
+    * rxJS-v7.8.0
     * primeng-17.5.0
     * primeicons-v6.0.1
 * DevOps
