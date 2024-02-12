@@ -15,7 +15,7 @@
 <p align="center">
   <img src="https://img.shields.io/github/last-commit/ericneves/myfavoritesquotes?display_timestamp=author&style=flat-square&logo=github&logoColor=white&labelColor=%236c6eff&color=yellow" alt="Github">
   <img src="https://img.shields.io/github/languages/top/ericneves/myfavoritesquotes?style=flat-square&logo=php&logoColor=white">
-  <img src="https://img.shields.io/github/license/ericneves/todoList?style=flat-square&color=%237f5af0">
+  <img src="https://img.shields.io/github/license/ericneves/myfavoritesquotes?style=flat-square&color=%232563EB">
 </p>
 
 ![screenshot](.github/screenA.png)
@@ -97,7 +97,8 @@ O app está rodando nos seguintes processos:
 
 ### License 
 
-<img src="https://img.shields.io/github/license/ericneves/todoList?style=flat-square&color=%237f5af0">
+<img src="https://img.shields.io/github/license/ericneves/myfavoritesquotes?style=flat-square&color=%232563EB
+">
 
 ### Author 🧑‍💻
 <a href="https://www.instagram.com/ericneves_dev/"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"></a> <a href="https://linkedin.com/in/ericnevesrr"> <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
