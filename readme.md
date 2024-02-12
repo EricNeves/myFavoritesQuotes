@@ -7,7 +7,7 @@
 </h1>
 
 <h4 align="center">
-  Aplicação Full Stack desenvolvida com PHP, PostgreSQL, Angular, PrimeNG, Docker e entre outros.
+  Aplicação Web desenvolvida com PHP, PostgreSQL, Angular, PrimeNG, Docker e entre outros.
 </h4> 
 
 <p align="center">Data de criação: Feb 10, 2024</p>
