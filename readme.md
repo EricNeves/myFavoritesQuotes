@@ -13,8 +13,8 @@
 <p align="center">Data de criação: Feb 10, 2024</p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/last-commit/ericneves/todoList?style=flat-square&logo=github&logoColor=%23dddddd&label=LAST%20COMMIT&labelColor=%23333333" alt="Github">
-  <img src="https://img.shields.io/github/languages/top/ericneves/todoList?style=flat-square&logo=PHP&logoColor=%238892BF&label=PHP&labelColor=%23dddddd">
+  <img src="https://img.shields.io/github/last-commit/ericneves/myfavoritesquotes?display_timestamp=author&style=flat-square&logo=github&logoColor=white&labelColor=%236c6eff&color=yellow" alt="Github">
+  <img src="https://img.shields.io/github/languages/top/ericneves/myfavoritesquotes?style=flat-square&logo=php&logoColor=white">
   <img src="https://img.shields.io/github/license/ericneves/todoList?style=flat-square&color=%237f5af0">
 </p>
 
