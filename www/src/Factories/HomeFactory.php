@@ -7,7 +7,7 @@ use App\Repositories\HomeRepository;
 
 class HomeFactory 
 {
-    public function generateInstance()
+    public function generateInstance(): HomeService
     {
         $homeRepositroy = new HomeRepository();
         $homeService    = new HomeService($homeRepositroy);

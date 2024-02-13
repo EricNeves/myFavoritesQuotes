@@ -11,7 +11,7 @@ class UserRepository
         $this->pdo = $pdo;
     }
 
-    public function create(array $data)
+    public function create(array $data): bool
     {
         $stmt = $this->pdo->prepare('
             INSERT INTO
@@ -32,7 +32,7 @@ class UserRepository
         return true;
     }
 
-    public function auth(array $fields)
+    public function auth(array $fields): bool|array
     {
         $stmt = $this->pdo->prepare('
             SELECT 
@@ -58,7 +58,7 @@ class UserRepository
         ];
     }
 
-    public function find(int|string $id)
+    public function find(int|string $id): null|array
     {
         $stmt = $this->pdo->prepare('
             SELECT 
@@ -74,7 +74,7 @@ class UserRepository
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function update(array $data, int|string $id)
+    public function update(array $data, int|string $id): bool
     {
         $stmt = $this->pdo->prepare('
             UPDATE

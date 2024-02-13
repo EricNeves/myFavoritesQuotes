@@ -4,7 +4,7 @@ namespace App\Utils;
 
 class Validator
 {
-    public function validate(array $fields)
+    public function validate(array $fields): bool|\Exception
     {
         foreach ($fields as $field) {
             $fieldValue = $field[0];

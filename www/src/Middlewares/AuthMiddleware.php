@@ -8,7 +8,7 @@ use App\Http\JWT;
 
 class AuthMiddleware
 {
-    public static function handle(array $authorization)
+    public static function handle(array $authorization): mixed
     {
         if (isset($authorization['error'])) {
             Response::json([

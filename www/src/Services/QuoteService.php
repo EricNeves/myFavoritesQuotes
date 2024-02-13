@@ -50,7 +50,7 @@ class QuoteService
         catch (\Exception $error)    { return ['error' => $error->getMessage()]; }
     }
 
-    public function fetchQuote()
+    public function fetchQuote(): array
     {
         try {
             $quote = $this->quoteRepository->random();
@@ -66,7 +66,7 @@ class QuoteService
         catch (\Exception $error)    { return ['error' => $error->getMessage()]; }
     }
 
-    public function fetchUserQuotes(int $page, int $limitPerPage)
+    public function fetchUserQuotes(int $page, int $limitPerPage): array
     {
         try {
             $userAuth = $this->jwt->user();
@@ -96,7 +96,7 @@ class QuoteService
         catch (\Exception $error)    { return ['error' => $error->getMessage()]; }
     }
 
-    public function findOne(int|string $id)
+    public function findOne(int|string $id): array
     {
         try {
             $userAuth = $this->jwt->user();
@@ -120,7 +120,7 @@ class QuoteService
         catch (\Exception $error)    { return ['error' => $error->getMessage()]; }
     }
 
-    public function updateQuote(array $data, int|string $id)
+    public function updateQuote(array $data, int|string $id): array
     {
         try {
             $userAuth = $this->jwt->user();
@@ -144,7 +144,7 @@ class QuoteService
         catch (\Exception $error)    { return ['error' => $error->getMessage()]; }
     }
 
-    public function deleteQuote(int|string $id)
+    public function deleteQuote(int|string $id): array
     {
         try {
             $userAuth = $this->jwt->user();

@@ -4,7 +4,7 @@ namespace App\Repositories;
 
 class HomeRepository 
 { 
-    public function message()
+    public function message(): array
     {
         return [
             "author"  => "Eric Neves <github.com/ericneves>",

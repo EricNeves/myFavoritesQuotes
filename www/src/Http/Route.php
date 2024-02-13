@@ -49,7 +49,7 @@ class Route
         ];
     }
 
-    public static function getRoutes()
+    public static function getRoutes(): array
     {
         return self::$routes;
     }

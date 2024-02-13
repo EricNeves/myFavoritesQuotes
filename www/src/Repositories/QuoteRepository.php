@@ -10,7 +10,7 @@ class QuoteRepository
     {
     }
 
-    public function save(array $data)
+    public function save(array $data): bool
     {
         $stmt = $this->pdo->prepare('
             INSERT INTO
@@ -31,7 +31,7 @@ class QuoteRepository
         return true;
     }
 
-    public function random()
+    public function random(): array
     {
         $stmt = $this->pdo->query('
             SELECT 
@@ -50,7 +50,7 @@ class QuoteRepository
         return $stmt->fetch(PDO::FETCH_ASSOC) ?? [];
     }
 
-    public function fetchAll(int $userId, int|string $page, int|string $limit)
+    public function fetchAll(int $userId, int|string $page, int|string $limit): array
     {
         $offset = ($page - 1) * 3;
 
@@ -73,7 +73,7 @@ class QuoteRepository
         return $stmt->fetchAll(PDO::FETCH_ASSOC) ?? [];
     }
 
-    public function total(int $userId)
+    public function total(int $userId): int
     {
         $stmt = $this->pdo->prepare('
             SELECT 
@@ -89,7 +89,7 @@ class QuoteRepository
         return $stmt->fetch(PDO::FETCH_ASSOC)['total'] ?? 0;
     }
 
-    public function find(int|string $id, int|string $userId)
+    public function find(int|string $id, int|string $userId): array
     {
         $stmt = $this->pdo->prepare('
             SELECT 
@@ -107,7 +107,7 @@ class QuoteRepository
         return $stmt->fetch(PDO::FETCH_ASSOC) ?? [];
     }
 
-    public function update(array $data, int|string $id, int|string $userId)
+    public function update(array $data, int|string $id, int|string $userId): bool
     {
         $stmt = $this->pdo->prepare('
             UPDATE
@@ -133,7 +133,7 @@ class QuoteRepository
         return $stmt->rowCount() > 0;
     }
 
-    public function remove(int|string $id, int|string $userId)
+    public function remove(int|string $id, int|string $userId): bool
     {
         $stmt = $this->pdo->prepare('
             DELETE FROM

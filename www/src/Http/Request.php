@@ -9,7 +9,7 @@ class Request
         return $_SERVER['REQUEST_METHOD'];
     }
 
-    public static function body()
+    public static function body(): array
     {
         $json = json_decode(file_get_contents('php://input'), true);
 
@@ -22,7 +22,7 @@ class Request
         return $data;
     }
 
-    public static function authorization()
+    public static function authorization(): array
     {
         $headers = getallheaders();
 

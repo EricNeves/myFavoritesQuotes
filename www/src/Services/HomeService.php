@@ -8,7 +8,7 @@ class HomeService
 {
     public function __construct(private HomeRepository $homeRepository) {}
 
-    public function getMessage()
+    public function getMessage(): array
     {
         return $this->homeRepository->message();
     }

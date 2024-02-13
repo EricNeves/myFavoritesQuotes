@@ -15,7 +15,7 @@ class QuoteFactory
     {
     }
 
-    public function generateInstance()
+    public function generateInstance(): QuoteService
     {
         $quoteRepository = new QuoteRepository($this->pdo);
         $validator       = new Validator();

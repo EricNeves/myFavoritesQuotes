@@ -8,7 +8,7 @@ class JWT
     {
     }
 
-    public function generate(array $data = [])
+    public function generate(array $data = []): string
     {
         $header  = json_encode(['alg' => 'HS256', 'typ' => 'JWT']);
         $payload = json_encode($data);
@@ -23,19 +23,19 @@ class JWT
         return $jwt;
     }
 
-    private function signature(string $header, string $payload)
+    private function signature(string $header, string $payload): string
     {
         $signature = hash_hmac('SHA256', $header . '.' . $payload, $this->secret, true);
 
         return $this->base64url_encode($signature);
     }
 
-    private function base64url_encode($data) 
+    private function base64url_encode($data) : string
     {
         return rtrim(strtr(base64_encode($data), '+/', '-_'), '=');
     }
     
-    private function base64url_decode($data)
+    private function base64url_decode($data): string
     {
         $padding = strlen($data) % 4;
 
@@ -67,7 +67,7 @@ class JWT
         return json_decode($data, true);
     }
 
-    public function user()
+    public function user(): mixed
     {
         return $this->userAuth;
     }

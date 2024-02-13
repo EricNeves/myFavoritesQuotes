@@ -14,7 +14,7 @@ class UserFactory
     {
     }
 
-    public function generateInstance()
+    public function generateInstance(): UserService
     {
         $userRepository = new UserRepository($this->pdo);
         $validator      = new Validator();

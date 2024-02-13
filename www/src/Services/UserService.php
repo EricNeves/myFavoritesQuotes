@@ -15,7 +15,7 @@ class UserService
     ) {
     }
 
-    public function save(array $data)
+    public function save(array $data): array
     {
         try {
             $fields = [
@@ -48,7 +48,7 @@ class UserService
         } catch (\Exception $error) { return ['error' => $error->getMessage()]; }
     }
 
-    public function authentication(array $data)
+    public function authentication(array $data): array
     {
         try {
             $fields = [
@@ -73,7 +73,7 @@ class UserService
         catch (\Exception $error)    { return ['error' => $error->getMessage()]; }
     }
 
-    public function fetchUser()
+    public function fetchUser(): array
     {
         try {
             $userAuth = $this->jwt->user();
@@ -95,7 +95,7 @@ class UserService
         catch (\Exception $error)    { return ['error' => $error->getMessage()]; }
     }
 
-    public function updateUser(array $data)
+    public function updateUser(array $data): array
     {
         try {
             $userAuth = $this->jwt->user();
