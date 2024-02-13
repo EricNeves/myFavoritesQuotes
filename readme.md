@@ -7,7 +7,7 @@
 </h1>
 
 <h4 align="center">
-  Aplicação Web desenvolvida com PHP, PostgreSQL, Angular, PrimeNG, Docker e entre outros.
+  Aplicação Web desenvolvida com PHP, Testes Unitários, PostgreSQL, Angular, PrimeNG, Docker e entre outros.
 </h4> 
 
 <p align="center">Data de criação: Feb 10, 2024</p>
@@ -29,7 +29,7 @@ No geral, a aplicação permite que os usuários **armazenem**, **explorem** e *
 
 Principais funcionalidades:
   * Cadastro
-  * Autenticação
+  * Autenticação por JWT
   * Gerenciamento de Citações
   * Geração de Citação Aleatória
 
@@ -54,7 +54,7 @@ A adoção do **Layered Architecture** promove uma melhor organização e separa
     * Node-v21
     * NGINX
     * typescript-v5.3.2
-    * rxJS
+    * rxJS-v7.8.0
     * primeng-17.5.0
     * primeicons-v6.0.1
 * DevOps
