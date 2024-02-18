@@ -48,7 +48,8 @@ A adoção do **Layered Architecture** promove uma melhor organização e separa
     * phpunit-v10.5
   * Apache
     * ModRewrite
-  * PostgreSQL-v15.4
+  * Database
+    * PostgreSQL-v15.4
 * UI
   * Angular-v17
     * Node-v21
